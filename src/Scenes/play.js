@@ -6,16 +6,14 @@ class play extends Phaser.Scene {
     //preloads assets so we can use them in game
     preload() { 
         this.load.image('stars', 'assets/stars.png');
-        this.load.image('galaxy', 'assets/galaxy.png');
         this.load.image('rocket', 'assets/rocket.png');
         this.load.image('spaceship', 'assets/ship.png'); 
-        // load spritesheet
+        // load spritesheet for explosion
         this.load.spritesheet('explosion', 'assets/explosion.png', {frameWidth: 200, frameHeight: 200, startFrame: 0, endFrame: 2});
     }
 
     create() {
         //tile sprite wants five parameters: x-position, y-position, width, height, and a key string that tells us which image to use
-        //this.galaxy = this.add.tileSprite(0, 0, 640, 480, 'galaxy').setOrigin(0,0);
         this.stars = this.add.tileSprite(0, 0, 640, 480, 'stars').setOrigin(0,0);
         //green ui bg - add and rectangle come from phaser framework
         //parameters: ?, ?, width, height, color
@@ -138,7 +136,7 @@ class play extends Phaser.Scene {
         // score add
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;  
-        this.sound.play('sfx_explosion'); 
+        this.sound.play('sfx_explosion', {volume: 0.8}); 
         this.p1Rocket.isReset = true;    
       }
 
