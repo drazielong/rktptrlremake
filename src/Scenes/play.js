@@ -3,7 +3,6 @@ class play extends Phaser.Scene {
         super("playScene");
     }
 
-    //preloads assets so we can use them in game
     preload() { 
         this.load.image('stars', 'assets/stars.png');
         this.load.image('galaxy', 'assets/galaxy.png');
