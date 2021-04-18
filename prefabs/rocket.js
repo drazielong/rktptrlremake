@@ -10,7 +10,7 @@ class Rocket extends Phaser.GameObjects.Sprite {
     }
 
     update(){
-        //left right movement: only allowed if rocket is not firing
+        //left right movement which is only allowed if rocket is not firing
         if(!this.isFiring) {
             if(keyLEFT.isDown && this.x >= borderUISize + this.width) {
                 this.x -= this.moveSpeed;
